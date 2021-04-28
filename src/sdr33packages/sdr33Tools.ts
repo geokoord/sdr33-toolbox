@@ -1,6 +1,5 @@
 
 export function fillUp(inP: string, len: number): string {
-
   let Res = inP;
 
   if (Res.length > len) {
@@ -12,3 +11,6 @@ export function fillUp(inP: string, len: number): string {
   }
   return Res
 }
+
+
+

@@ -22,9 +22,9 @@ export class Coordinate {
   //constructor
   constructor(pName: string, N: number, E: number, ele: number, desc: string) {
     this._pointId = pName;
-    this._nothing = N;
-    this._easting = E;
-    this._elevation = ele;
+    this._nothing = Number(N.toFixed(4));
+    this._easting = Number(E.toFixed(4));
+    this._elevation = Number(ele.toFixed(4));
     this._description = desc;
   }
 

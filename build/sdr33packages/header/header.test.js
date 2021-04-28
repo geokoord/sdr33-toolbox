@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const chai_1 = require("chai");
 const header_1 = require("./header");
 let C = new header_1.Header();
-console.log(C.getMessage());
 describe('Header', () => {
     describe('Message', () => {
         describe('Length of message', () => {

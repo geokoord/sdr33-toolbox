@@ -4,7 +4,7 @@ import { Header } from './header';
 
 let C = new Header();
 
-console.log(C.getMessage())
+
 
 describe('Header', () => {
 

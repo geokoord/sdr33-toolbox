@@ -14,9 +14,9 @@ class Coordinate {
         this._derivationCode = derivationCode_1.derivationCode.KeyboardInput;
         this.datalength = 84; //length in bytes
         this._pointId = pName;
-        this._nothing = N;
-        this._easting = E;
-        this._elevation = ele;
+        this._nothing = Number(N.toFixed(4));
+        this._easting = Number(E.toFixed(4));
+        this._elevation = Number(ele.toFixed(4));
         this._description = desc;
     }
     getPointIdBytes() {

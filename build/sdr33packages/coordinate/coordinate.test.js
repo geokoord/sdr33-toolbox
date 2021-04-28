@@ -31,7 +31,6 @@ describe('Coordinate', () => {
             it('Length of message expect to be 84', function () {
                 chai_1.expect(M).to.be.lengthOf(84);
             });
-            console.log(C2.getMessage());
         });
     });
 });
