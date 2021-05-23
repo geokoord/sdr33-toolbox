@@ -1,8 +1,9 @@
 {
-  "name": "sdr33-checksum-calculation",
+  "name": "sdr33",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "scripts": {
     "build": "tsc --build && mocha \"**/*.test.js\"",
     "start": "tsc --build && node ./build/index.js",

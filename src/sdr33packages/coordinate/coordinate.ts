@@ -28,6 +28,10 @@ export class Coordinate {
     this._description = desc;
   }
 
+  /**
+   * Get PointId bytes
+   * @returns 
+   */
   getPointIdBytes(): string {
 
     let len = 16;

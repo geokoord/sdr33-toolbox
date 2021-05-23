@@ -9,6 +9,10 @@ const job_1 = require("./../sdr33packages/job/job");
 const coordinate_1 = require("./../sdr33packages/coordinate/coordinate");
 const fs_1 = __importDefault(require("fs"));
 class Sdr33Export {
+    /**
+     * Create a new Sdr33 Export Job
+     * @param jobName Name of the sdr33 job
+     */
     constructor(jobName) {
         this._job = new job_1.Job(jobName);
         this._header = new header_1.Header();
@@ -20,6 +24,7 @@ class Sdr33Export {
      */
     addCoordinate(point) {
         this._coordinatesList.push(point);
+        return true;
     }
     getMessage() {
         let rawmessage = '';

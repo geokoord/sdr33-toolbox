@@ -19,6 +19,10 @@ class Coordinate {
         this._elevation = Number(ele.toFixed(4));
         this._description = desc;
     }
+    /**
+     * Get PointId bytes
+     * @returns
+     */
     getPointIdBytes() {
         let len = 16;
         let Res = this._pointId;

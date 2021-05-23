@@ -3,12 +3,23 @@ import { Job } from './../sdr33packages/job/job'
 import { Coordinate } from './../sdr33packages/coordinate/coordinate'
 import fs from 'fs';
 
-export class Sdr33Export {
+
+export interface Isdr33Export {
+  addCoordinate(point: Coordinate): boolean;
+  getMessage(): string;
+}
+
+
+export class Sdr33Export implements Isdr33Export {
 
   private _coordinatesList: Array<Coordinate>;
   private _header: Header;
   private _job: Job;
 
+  /**
+   * Create a new Sdr33 Export Job
+   * @param jobName Name of the sdr33 job
+   */
   constructor(jobName: string) {
     this._job = new Job(jobName);
     this._header = new Header();
@@ -21,9 +32,10 @@ export class Sdr33Export {
    */
   addCoordinate(point: Coordinate) {
     this._coordinatesList.push(point);
+    return true;
   }
 
-  getMessage() {
+  getMessage(): string {
     let rawmessage = ''
     rawmessage += this._header.getMessage() + '\n';
     rawmessage += this._job.getMessage() + '\n';
