@@ -14,9 +14,29 @@ for (let index = 0; index < 100; index++) {
 console.log(testExport.getMessage());
 */
 
-
 let E = sdr33.Sdr33Export.fromGeoJson('./test.geojson');
-console.log(E.getMessage());
+//console.log(E.getMessage());
+
+describe('Sdr33Export Class', () => {
+
+  describe('Check if SDR33Export object has methods', () => {
+    it('Method addCoordinate()', function () {
+      expect(E).has.property('addCoordinate')
+    });
+
+    it('Method getMessage()', function () {
+      expect(E).has.property('getMessage')
+    });
+  });
+
+  describe('Check if SDR33Export class has static methods', () => {
+
+    it('Static method fromGeoJson()', function () {
+      expect(sdr33.Sdr33Export).to.have.property('fromGeoJson')
+    });
+  });
+
+});
 
 
 

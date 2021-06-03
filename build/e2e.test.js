@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const index_1 = __importDefault(require("./index"));
+const chai_1 = require("chai");
 /*
 let testExport = new sdr33.Sdr33Export('TestJobNameWhichIsTooLong')
 
@@ -17,5 +18,20 @@ for (let index = 0; index < 100; index++) {
 console.log(testExport.getMessage());
 */
 let E = index_1.default.Sdr33Export.fromGeoJson('./test.geojson');
-console.log(E.getMessage());
+//console.log(E.getMessage());
+describe('Sdr33Export Class', () => {
+    describe('Check if SDR33Export object has methods', () => {
+        it('Method addCoordinate()', function () {
+            chai_1.expect(E).has.property('addCoordinate');
+        });
+        it('Method getMessage()', function () {
+            chai_1.expect(E).has.property('getMessage');
+        });
+    });
+    describe('Check if SDR33Export class has static methods', () => {
+        it('Static method fromGeoJson()', function () {
+            chai_1.expect(index_1.default.Sdr33Export).to.have.property('fromGeoJson');
+        });
+    });
+});
 //# sourceMappingURL=e2e.test.js.map

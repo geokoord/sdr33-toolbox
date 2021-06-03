@@ -15,8 +15,13 @@ export declare class Sdr33Export implements Isdr33Export {
     /**
      * Adds a coordinate object to the coordinate list of the sdr33 export object
      * @param point
+     * @returns boolean
      */
     addCoordinate(point: Coordinate): boolean;
+    /**
+     * Returns SDS33 Format message for uploading to Sokkia totalstation
+     * @returns SDS33 Format message
+     */
     getMessage(): string;
     /**
      * Generates a sdr33 Export object from a given geoJson Point Object

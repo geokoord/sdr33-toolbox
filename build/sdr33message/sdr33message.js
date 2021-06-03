@@ -21,11 +21,16 @@ class Sdr33Export {
     /**
      * Adds a coordinate object to the coordinate list of the sdr33 export object
      * @param point
+     * @returns boolean
      */
     addCoordinate(point) {
         this._coordinatesList.push(point);
         return true;
     }
+    /**
+     * Returns SDS33 Format message for uploading to Sokkia totalstation
+     * @returns SDS33 Format message
+     */
     getMessage() {
         let rawmessage = '';
         rawmessage += this._header.getMessage() + '\n';
@@ -53,8 +58,14 @@ class Sdr33Export {
             let name = geojson.name;
             let resExport = new Sdr33Export(geojson.name);
             let i = 0; //Point Index
+            //Calulcate Index of N and E value based on the CRS
+            let crs = geojson.crs.properties.name;
+            // in GeoJSON X == E and Y==N
+            let index_N = 1;
+            let index_E = 0;
+            let index_Z = 2;
             for (let pointFeature of geojson.features) {
-                let p = new coordinate_1.Coordinate(pointFeature.properties.name || String(i), pointFeature.geometry.coordinates[0], pointFeature.geometry.coordinates[1], pointFeature.geometry.coordinates[2] || 0, pointFeature.properties.description || '');
+                let p = new coordinate_1.Coordinate(pointFeature.properties.name || String(i), pointFeature.geometry.coordinates[index_N], pointFeature.geometry.coordinates[index_E], pointFeature.geometry.coordinates[index_Z] || 0, pointFeature.properties.description || '');
                 resExport.addCoordinate(p);
                 i++;
             }

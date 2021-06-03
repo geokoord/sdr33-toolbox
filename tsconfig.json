@@ -9,6 +9,6 @@
     "resolveJsonModule": true,
     "declaration": true
   },
-  "include": ["src", "src/**/*.json"],
+  "include": ["src", "src/**/*.json", "script.ts"],
   "exclude": ["node_modules", "build"]
 }
