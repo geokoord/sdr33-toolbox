@@ -8,7 +8,10 @@ const sdr33Tools_1 = require("./../sdr33Tools");
  *  Job identifier class
  */
 class Job {
-    //constructor
+    /**
+     * Create new SDR33 job object
+     * @param jobName Name of the SDR33 job
+     */
     constructor(jobName) {
         this._typeCode = '10';
         this._derivationCode = derivationCode_1.derivationCode.NotMeasured;

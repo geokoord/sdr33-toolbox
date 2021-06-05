@@ -8,7 +8,14 @@ const sdr33Tools_1 = require("./../sdr33Tools");
  * Coordinate class for point coodinate objects
  */
 class Coordinate {
-    //constructor
+    /**
+     * Create a SDR33 coordinate object
+     * @param pName //Point name  (max. 16 characters)
+     * @param N     //North value
+     * @param E     //East value
+     * @param ele   //elevation
+     * @param desc  //point description (max. 16 characters)
+     */
     constructor(pName, N, E, ele, desc) {
         this._typeCode = '08';
         this._derivationCode = derivationCode_1.derivationCode.KeyboardInput;

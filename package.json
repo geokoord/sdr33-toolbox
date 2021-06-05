@@ -4,16 +4,22 @@
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
+  "directories": {
+    "build": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geokoord/sdr33-toolbox"
+  },
   "scripts": {
     "build": "tsc --build && mocha \"**/*.test.js\"",
     "start": "tsc --build && node ./build/index.js",
     "test": "tsc --build && mocha \"**/*.test.js\""
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Geopackix (https://github.com/geopackix)",
+  "license": "MIT",
   "dependencies": {
-    "moment": "^2.29.1",
-    "serialport": "^9.0.7"
+    "moment": "^2.29.1"
   },
   "devDependencies": {
     "@types/chai": "^4.2.17",

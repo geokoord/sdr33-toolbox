@@ -59,7 +59,7 @@ class Sdr33Export {
             let resExport = new Sdr33Export(geojson.name);
             let i = 0; //Point Index
             //Calulcate Index of N and E value based on the CRS
-            let crs = geojson.crs.properties.name;
+            //let crs = geojson.crs.properties.name
             // in GeoJSON X == E and Y==N
             let index_N = 1;
             let index_E = 0;
