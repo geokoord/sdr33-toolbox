@@ -4,8 +4,6 @@ import { Job } from './job';
 
 let C = new Job('MyTestJobWithLongName');
 
-
-
 describe('JobIdnetifier', () => {
 
   describe('Message', () => {

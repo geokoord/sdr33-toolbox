@@ -15,7 +15,10 @@ export class Job {
 
   private datalength: number = 26      //length in bytes
 
-  //constructor
+  /**
+   * Create new SDR33 job object
+   * @param jobName Name of the SDR33 job
+   */
   constructor(jobName?: string) {
     this._jobName = jobName || '';
     this._settings = { pointIdType: 1, IncludeEle: 2, atmosCorrection: 1, crcorrection: 1, refractionConstant: 1, seaLevelCorrection: 1 };
@@ -32,7 +35,6 @@ export class Job {
     let Res = this._settings.pointIdType + '' + this._settings.IncludeEle + '' + this._settings.atmosCorrection + '' + this._settings.crcorrection + '' + this._settings.refractionConstant + '' + this._settings.seaLevelCorrection;
     return fillUp(Res, len);
   }
-
 
   getMessage() {
     let m = '';
